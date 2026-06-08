@@ -1,4 +1,4 @@
-# 📋 Subscription-Manager — Gestor Centralizado de Subscrições e Contratos
+# 📋 SubTracker — Gestor Centralizado de Subscrições e Contratos
 
 > Projeto de aprendizagem fullstack com Spring Boot + React para monitorizar subscrições recorrentes, controlar custos e evitar desperdício financeiro.
 
