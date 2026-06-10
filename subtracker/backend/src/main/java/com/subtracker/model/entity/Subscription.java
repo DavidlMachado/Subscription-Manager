@@ -2,6 +2,7 @@ package com.subtracker.model.entity;
 
 import com.subtracker.model.enums.BillingCycle;
 import com.subtracker.model.enums.SubscriptionStatus;
+import com.subtracker.model.enums.Currency;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -110,6 +111,21 @@ public class Subscription {
      */
     @Column(name = "start_date", nullable = false)
     private LocalDate startDate;
+
+    /**
+     * The currency the payment is made on
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "currency", nullable = false)
+    @Builder.Default
+    private Currency currency = Currency.EUR;
+
+    /**
+     * Optional free-text field for personal notes about the subscription.
+     * (e.g., "Cancel in August", "Shared with João", "Use promo code XYZ")
+     */
+    @Column(name = "notes", length = 500)
+    private String notes;
 
     /**
      * Method that advances the payment date automatically
